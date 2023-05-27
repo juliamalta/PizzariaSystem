@@ -7,7 +7,7 @@ const Ask= ()=> {
 
   return (
     <>
-<Header/>
+
 <PizzaList/>
 <Footer/>
 <FooterC/>
