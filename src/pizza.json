@@ -1,0 +1,31 @@
+[
+{
+"title":"Alho Poró",
+ "desc": "Molho,Mussarela ,Alho Poró,Gotas de Catupiry,Alho Frito",
+ "tags":"Popular"
+
+},
+{
+    "title":"Calabresa",
+    "desc":"Molho,Mussarela,Calabresa,Orégano"
+    
+    },
+
+    {
+        "title":"Bacon Crocante",
+        "desc":"Molho,Mussarela,Calabresa e Orégano"
+        
+        },
+        {
+            "title":"Vegetariana",
+            "desc":"Molho,Mussarela,Tomate,Pimentão,Palmito,Milho e Champignon"
+        
+            },
+            {
+                "title":"Frango com Catupiry",
+                "desc":"Molho,Mussarela,Frango,Catupiry,Orégano",
+                "tags":"Popular"
+                }
+                                    
+
+]
