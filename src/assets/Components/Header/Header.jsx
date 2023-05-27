@@ -2,7 +2,7 @@
 
 const Header = () => {
 
-return <div className="flex flex-row border-solid border-2 border-gray-200 h-20 justify-between  ">
+return <div className="flex flex-row border-solid border-2 border-gray-200 h-20 justify-between bg-gray-300 ">
 
     <div className="flex flex-row">
     
