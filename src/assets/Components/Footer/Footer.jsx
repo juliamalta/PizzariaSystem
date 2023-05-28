@@ -1,7 +1,7 @@
 
 const Footer = () =>{
 
-    return <div className="flex  items-center justify-evenly  bg-gray-300 w-full mt-10  ">
+    return <div className="flex  items-center justify-evenly  bg-gray-300 w-full mt-20  ">
 <div className="flex flex-col text-sm mt-10 ">
 <h1 className="font-bold uppercase text-dark-200">Sobre nós</h1>
 <p>Pizzaria Malta</p>

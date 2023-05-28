@@ -1,14 +1,22 @@
 import { useState } from "react"
 import data from "../../../pizza.json"
 import {PlusIcon,MinusIcon } from '@heroicons/react/24/solid'
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 
 const PizzaList = () => {
     const[selectPizza,setSelectPizza] = useState([]);
+    const[countPizza,setCountPizza] = useState(0);
   {/* funçao para adicionar a pizza selecionada pelo indice  */}
 const handleAddToCart = (index)=>{
     const pizzaAdd = data[index];
-    setSelectPizza((prevSelectPizza) =>[...prevSelectPizza,pizzaAdd]);
+    
+     setSelectPizza((prevSelectPizza) =>[...prevSelectPizza,pizzaAdd]);
+     setCountPizza((prevSelectPizza) => prevSelectPizza  + 1 );
+  
+
+   
 
 
 };
@@ -21,12 +29,11 @@ const handleRemoveToCart = (index) => {
     });
   };
 
-  const concluir =(index) =>{
- 
+  const notify = () => toast("Pedido Encaminhado!");
 
-    alert("Pedido encaminhado" )
+  
 
-  }
+  
 
 
 
@@ -40,10 +47,13 @@ const handleRemoveToCart = (index) => {
     <button id="btnBusca " className="bg-gray-300 rounded-none w-20 uppercase">Buscar</button>
 
 </div>
-<div className="text-2xl ">
+<div className="text-2xl  ">
         {
           data.map((pizza,index)=>(
 <div key={index} className={`p-4 ${index === 0 || index === 4 ? ' w-5/6 border-solid border-2 border-pizzab-100 mt-2 ' : ''}${index === 1 || index === 2  || index === 3  || index === 5? ' w-5/6 border-solid border-2 border-pizzab-200 mt-2'  : ''} `}>
+<div className="font-bold flex justify-end">
+<h2 className="text-sm rounded-full bg-violet-300 w-50 uppercase" >{pizza.tags}</h2>
+</div>
 <h2 className="font-bold ">{pizza.title}
 <button type="submit" key={index} onClick={() => handleAddToCart(index)}>
   <PlusIcon className="h-8 bg-violet-200 rounded-full" />
@@ -78,6 +88,7 @@ const handleRemoveToCart = (index) => {
 <h2 className="font-bold ">{pizza.title}
 </h2>
 <h2>{pizza.desc}</h2>
+<h2 className="bg-gray-200">{countPizza}:Quantidade</h2>
 <button className="rounded-full bg-red-200 p-1 w-7 font-bold uppercase" onClick={() => handleRemoveToCart(index)}>-</button>
 </div>
 
@@ -95,7 +106,8 @@ const handleRemoveToCart = (index) => {
   </div>
 
   <div className="flex justify-end  grid-cols-3 gap-4 place-items-end h-56 ">
-    <button onClick={concluir} className="bg-green-200 font-bold rounded-full my-10 p-5 uppercase">Concluir pedido</button>
+    <button onClick={notify} className="bg-green-200 font-bold rounded-full my-10 p-5 uppercase">Concluir pedido</button>
+    <ToastContainer />
   </div>
 
 </div>
